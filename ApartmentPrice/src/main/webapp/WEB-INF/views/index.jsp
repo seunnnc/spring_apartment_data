@@ -6,21 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>메인</title>
+<style>
+	.container {
+		display:flex;
+		justify-content: center;
+	}
+</style>
 </head>
 <body>
-	<div>
+	<div class="container">
 		<form action ="/result" method="post">
 			<div>
 			날짜 :
 			<select name="year">
 				<c:forEach var="i" begin="2000" end="2020">
-					<option value="${i}">${i}></option>
+					<option value="${i}">${i}</option>
 				</c:forEach>
 			</select>
 			-
-			<select name="month">
+			<select name="mon">
 				<c:forEach var="i" begin="1" end="12">
-					<option value="${i}">${i}></option>
+					<option value="${i}">${i}</option>
 				</c:forEach>
 			</select>
 			</div>
@@ -28,7 +34,7 @@
 				지역 :
 				<select name="locationCd">
 				<c:forEach var="item" items="${locationList}">
-					<option value="${item.external_cd}">${item.local_nm}></option>
+					<option value="${item.external_cd}">${item.local_nm}</option>
 				</c:forEach>
 				</select>
 			</div>
